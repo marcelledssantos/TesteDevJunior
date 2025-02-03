@@ -1,26 +1,24 @@
-# LOCALE
 spring:
   web:
     locale-resolver: fixed
     locale: pt_BR
 
-  # MySQL Database Connection Properties
+  sql:
+    init:
+      mode: never
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/testDevJunior?createDatabaseIfNotExist=true&useSSL=false&allowPubliclyRetrieval=true&serverTimeZone=America/Sao_Paulo
     username: root
     password: sucesso
 
-  # JPA
   jpa:
     show-sql: true
     properties:
       hibernate:
         format_sql: false
-    hibernate:
-      ddl-auto: update
     open-in-view: false
 
-  # Permite referências circulares
   main:
     allow-circular-references: true

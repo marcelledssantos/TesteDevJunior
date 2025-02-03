@@ -19,10 +19,10 @@ public class SubestacaoController {
         public List<Subestacao> listar() {
             return subestacaoService.listar();
         }
-        
+
         @PostMapping
-        public ResponseEntity<Subestacao> incluir(@RequestBody Subestacao subestacao) {
-            return ResponseEntity.ok(subestacaoService.incluir(subestacao));
+        public ResponseEntity<Subestacao> salvar(@RequestBody Subestacao subestacao) {
+            return ResponseEntity.ok(subestacaoService.salvar(subestacao));
         }
     }
 

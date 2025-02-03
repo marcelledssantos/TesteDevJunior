@@ -1,5 +1,6 @@
 package testeDevJunior.demo.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +22,7 @@ public class Subestacao {
     @Column(name = "ID_SUBESTACAO")
     private Integer id;
 
-    @Column(name = "CODIGO", nullable = false, length = 3, unique = true)
+    @Column(name = "CODIGO", nullable = false, length = 3, unique = true, updatable = false)
     private String codigo;
 
     @Column(name = "NOME", nullable = false, length = 100)
@@ -33,7 +34,8 @@ public class Subestacao {
     @Column(name = "LONGITUDE", precision = 15, scale = 13)
     private BigDecimal longitude;
 
-    @OneToMany(mappedBy = "subestacao", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany(mappedBy = "subestacao", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<RedeMT> redes;
 
 }

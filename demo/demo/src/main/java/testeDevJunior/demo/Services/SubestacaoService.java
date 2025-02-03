@@ -1,5 +1,6 @@
 package testeDevJunior.demo.Services;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import testeDevJunior.demo.Models.Subestacao;
@@ -16,8 +17,8 @@ public class SubestacaoService {
     public List<Subestacao> listar() {
         return subestacaoRepository.findAll();
     }
-
-    public Subestacao incluir(Subestacao subestacao) {
+    @Transactional
+    public Subestacao salvar(Subestacao subestacao) {
         return subestacaoRepository.save(subestacao);
     }
 }

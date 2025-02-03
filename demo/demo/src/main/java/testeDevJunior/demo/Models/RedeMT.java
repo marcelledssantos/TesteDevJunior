@@ -19,7 +19,7 @@ public class RedeMT {
     @Column(name = "ID_REDE_MT")
     private Integer id;
 
-    @Column(name = "CODIGO", nullable = false, length = 5, unique = true)
+    @Column(name = "CODIGO", nullable = false, length = 5, unique = true, updatable = false)
     private String codigo;
 
     @Column(name = "NOME", nullable = false, length = 100)
