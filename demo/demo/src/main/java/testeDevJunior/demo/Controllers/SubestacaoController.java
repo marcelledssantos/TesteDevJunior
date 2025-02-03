@@ -3,6 +3,7 @@ package testeDevJunior.demo.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import testeDevJunior.demo.Dto.SubestacaoDto;
 import testeDevJunior.demo.Models.Subestacao;
 import testeDevJunior.demo.Services.SubestacaoService;
 
@@ -21,7 +22,8 @@ public class SubestacaoController {
         }
 
         @PostMapping
-        public ResponseEntity<Subestacao> salvar(@RequestBody Subestacao subestacao) {
+        public ResponseEntity<SubestacaoDto> salvar(@RequestBody SubestacaoDto subestacaoDto) {
+            SubestacaoDto subestacao = subestacaoService.salvar(subestacaoDto);
             return ResponseEntity.ok(subestacaoService.salvar(subestacao));
         }
     }
