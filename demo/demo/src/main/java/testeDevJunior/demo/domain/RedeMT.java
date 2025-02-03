@@ -1,4 +1,4 @@
-package testeDevJunior.demo.Models;
+package testeDevJunior.demo.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,5 +31,5 @@ public class RedeMT {
 
     @ManyToOne
     @JoinColumn(name = "ID_SUBESTACAO", nullable = false)
-    private Subestacao subestacao;
+    private testeDevJunior.demo.domain.Subestacao subestacao;
 }

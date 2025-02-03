@@ -1,4 +1,4 @@
-package testeDevJunior.demo.Config;
+package testeDevJunior.demo.infra;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -14,4 +14,3 @@ public class ModelMapperConfig {
         return new ModelMapper();
     }
 }
-

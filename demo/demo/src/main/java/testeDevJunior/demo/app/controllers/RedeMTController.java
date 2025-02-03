@@ -1,11 +1,11 @@
-package testeDevJunior.demo.Controllers;
+package testeDevJunior.demo.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import testeDevJunior.demo.Dto.RedeMTDto;
-import testeDevJunior.demo.Models.RedeMT;
-import testeDevJunior.demo.Services.RedeMTService;
+import testeDevJunior.demo.app.dto.RedeMTDto;
+import testeDevJunior.demo.domain.RedeMT;
+import testeDevJunior.demo.app.services.RedeMTService;
 
 import java.util.List;
 

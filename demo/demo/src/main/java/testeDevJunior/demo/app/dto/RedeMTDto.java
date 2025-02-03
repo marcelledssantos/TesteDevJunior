@@ -1,4 +1,4 @@
-package testeDevJunior.demo.Dto;
+package testeDevJunior.demo.app.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
@@ -15,11 +15,11 @@ public class RedeMTDto {
     private String codigo;
     private String nome;
     private BigDecimal tensaoNominal;
-    private SubestacaoRedeDto subestacao;
+    private testeDevJunior.demo.app.dto.SubestacaoRedeDto subestacao;
 
     public RedeMTDto() {}
 
-    public RedeMTDto(String codigo, String nome, BigDecimal tensaoNominal, SubestacaoRedeDto subestacao) {
+    public RedeMTDto(String codigo, String nome, BigDecimal tensaoNominal, testeDevJunior.demo.app.dto.SubestacaoRedeDto subestacao) {
         this.codigo = codigo;
         this.nome = nome;
         this.tensaoNominal = tensaoNominal;

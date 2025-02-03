@@ -1,4 +1,4 @@
-package testeDevJunior.demo.Models;
+package testeDevJunior.demo.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

@@ -1,12 +1,11 @@
-package testeDevJunior.demo.Services;
+package testeDevJunior.demo.app.services;
 
-import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testeDevJunior.demo.Dto.SubestacaoDto;
-import testeDevJunior.demo.Models.Subestacao;
-import testeDevJunior.demo.Repositories.SubestacaoRepository;
+import testeDevJunior.demo.app.dto.SubestacaoDto;
+import testeDevJunior.demo.domain.Subestacao;
+import testeDevJunior.demo.app.repositories.SubestacaoRepository;
 
 import java.util.List;
 

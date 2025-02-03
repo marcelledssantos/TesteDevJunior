@@ -1,14 +1,14 @@
-package testeDevJunior.demo.Services;
+package testeDevJunior.demo.app.services;
 
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import testeDevJunior.demo.Dto.RedeMTDto;
-import testeDevJunior.demo.Models.RedeMT;
-import testeDevJunior.demo.Models.Subestacao;
-import testeDevJunior.demo.Repositories.RedeMTRepository;
-import testeDevJunior.demo.Repositories.SubestacaoRepository;
+import testeDevJunior.demo.app.dto.RedeMTDto;
+import testeDevJunior.demo.domain.RedeMT;
+import testeDevJunior.demo.domain.Subestacao;
+
+import testeDevJunior.demo.app.repositories.SubestacaoRepository;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class RedeMTService {
 
     @Autowired
-    private  RedeMTRepository redeMTRepository;
+    private testeDevJunior.demo.app.repositories.RedeMTRepository redeMTRepository;
 
     @Autowired
     private  SubestacaoRepository subestacaoRepository;
@@ -32,7 +32,7 @@ public class RedeMTService {
         return mapper.map(redeMT, RedeMTDto.class);
     }
 
-    public RedeMTService(RedeMTRepository redeMTRepository, SubestacaoRepository subestacaoRepository) {
+    public RedeMTService(testeDevJunior.demo.app.repositories.RedeMTRepository redeMTRepository, SubestacaoRepository subestacaoRepository) {
         this.redeMTRepository = redeMTRepository;
         this.subestacaoRepository = subestacaoRepository;
     }

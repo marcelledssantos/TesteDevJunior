@@ -1,11 +1,11 @@
-package testeDevJunior.demo.Controllers;
+package testeDevJunior.demo.app.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import testeDevJunior.demo.Dto.SubestacaoDto;
-import testeDevJunior.demo.Models.Subestacao;
-import testeDevJunior.demo.Services.SubestacaoService;
+import testeDevJunior.demo.app.dto.SubestacaoDto;
+import testeDevJunior.demo.domain.Subestacao;
+import testeDevJunior.demo.app.services.SubestacaoService;
 
 import java.util.List;
 

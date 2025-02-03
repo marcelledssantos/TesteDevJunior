@@ -1,4 +1,4 @@
-package testeDevJunior.demo.Dto;
+package testeDevJunior.demo.app.dto;
 
 import lombok.Getter;
 import lombok.Setter;
