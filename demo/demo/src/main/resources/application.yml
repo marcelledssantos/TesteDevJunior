@@ -7,7 +7,7 @@ spring:
   # MySQL Database Connection Properties
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/testeDevJunior?createDatabaseIfNotExist=true&useSSL=false&allowPubliclyRetrieval=true&serverTimeZone=America/Sao_Paulo
+    url: jdbc:mysql://localhost:3306/testDevJunior?createDatabaseIfNotExist=true&useSSL=false&allowPubliclyRetrieval=true&serverTimeZone=America/Sao_Paulo
     username: root
     password: sucesso
 
