@@ -1,6 +1,7 @@
 package testeDevJunior.demo.Models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "TB_REDE_MT")
 public class RedeMT {
@@ -30,12 +32,4 @@ public class RedeMT {
     @ManyToOne
     @JoinColumn(name = "ID_SUBESTACAO", nullable = false)
     private Subestacao subestacao;
-
-    public RedeMT(Integer id, String codigo, String nome, BigDecimal tensaoNominal, Subestacao subestacao) {
-        this.id = id;
-        this.codigo = codigo;
-        this.nome = nome;
-        this.tensaoNominal = tensaoNominal;
-        this.subestacao = subestacao;
-    }
 }

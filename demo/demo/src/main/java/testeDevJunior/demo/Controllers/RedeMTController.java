@@ -3,6 +3,7 @@ package testeDevJunior.demo.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import testeDevJunior.demo.Dto.RedeMTDto;
 import testeDevJunior.demo.Models.RedeMT;
 import testeDevJunior.demo.Services.RedeMTService;
 
@@ -25,8 +26,9 @@ public class RedeMTController {
     }
 
     @PostMapping
-    public ResponseEntity<RedeMT> save(@RequestBody RedeMT redeMT) {
-        return ResponseEntity.ok(redeMTService.save(redeMT));
+    public ResponseEntity<RedeMTDto> save(@RequestBody RedeMTDto redeMTDto) {
+        RedeMTDto redeMT = redeMTService.save(redeMTDto);
+        return ResponseEntity.ok(redeMT);
     }
 }
 
