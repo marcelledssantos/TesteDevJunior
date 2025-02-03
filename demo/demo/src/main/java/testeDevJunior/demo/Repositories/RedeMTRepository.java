@@ -5,5 +5,4 @@ import org.springframework.stereotype.Repository;
 import testeDevJunior.demo.Models.RedeMT;
 
 @Repository
-public interface RedeMTRepository extends JpaRepository<RedeMT, Integer> {
-}
+public interface RedeMTRepository extends JpaRepository<RedeMT, Integer> {}

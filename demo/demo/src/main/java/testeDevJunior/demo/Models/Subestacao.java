@@ -2,11 +2,9 @@ package testeDevJunior.demo.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -37,5 +35,4 @@ public class Subestacao {
     @JsonIgnore
     @OneToMany(mappedBy = "subestacao", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<RedeMT> redes;
-
 }
