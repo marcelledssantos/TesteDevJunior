@@ -5,5 +5,7 @@ import org.springframework.stereotype.Repository;
 import testeDevJunior.demo.domain.Subestacao;
 
 @Repository
-public interface SubestacaoRepository extends JpaRepository<Subestacao, Integer> {}
+public interface SubestacaoRepository extends JpaRepository<Subestacao, Integer> {
+    boolean existsByCodigo(String codigo);
+}
 

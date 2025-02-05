@@ -1,24 +1,15 @@
 spring:
-  web:
-    locale-resolver: fixed
-    locale: pt_BR
-
-  sql:
-    init:
-      mode: never
-
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/testDevJunior?createDatabaseIfNotExist=true&useSSL=false&allowPubliclyRetrieval=true&serverTimeZone=America/Sao_Paulo
+    url: jdbc:mysql://localhost:3306/testDevJunior?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Sao_Paulo
     username: root
     password: sucesso
 
   jpa:
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: false
-    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
 
-  main:
-    allow-circular-references: true

@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/subestacoes")
+@CrossOrigin
 public class SubestacaoController {
 
         @Autowired
