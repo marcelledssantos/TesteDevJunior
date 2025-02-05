@@ -6,6 +6,7 @@ import testeDevJunior.demo.domain.Subestacao;
 
 @Repository
 public interface SubestacaoRepository extends JpaRepository<Subestacao, Integer> {
+
     boolean existsByCodigo(String codigo);
 }
 

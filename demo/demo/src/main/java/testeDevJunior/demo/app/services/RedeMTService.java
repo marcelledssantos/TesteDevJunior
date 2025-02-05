@@ -47,7 +47,6 @@ public class RedeMTService {
         Subestacao subestacao = subestacaoRepository.findById(redeMTDto.getSubestacao().getId())
                 .orElseThrow(() -> new RuntimeException("Subestação não encontrada"));
         RedeMT redeMT = paraRedeMT(redeMTDto);
-        redeMT.setSubestacao(subestacao);
         RedeMT saved = redeMTRepository.save(redeMT);
 
         return paraDto(saved);

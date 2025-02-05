@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 import testeDevJunior.demo.app.dto.SubestacaoDto;
 import testeDevJunior.demo.domain.Subestacao;
 import testeDevJunior.demo.app.repositories.SubestacaoRepository;
@@ -34,11 +35,21 @@ public class SubestacaoService {
 
     @Transactional
     public SubestacaoDto salvar(SubestacaoDto subestacaoDto) {
-        Subestacao subestacao = paraSubestacaoDto(subestacaoDto);
-        if (subestacaoRepository.existsByCodigo(subestacao.getCodigo())) {
+        if (subestacaoDto.getCodigo() != null) {
+            subestacaoDto.setCodigo(subestacaoDto.getCodigo().toUpperCase());
+        }
+        System.out.println("Código recebido: " + subestacaoDto.getCodigo());
+
+        boolean codigoExiste = subestacaoRepository.existsByCodigo(subestacaoDto.getCodigo());
+        System.out.println("Código existe? " + codigoExiste);
+
+        if (codigoExiste) {
             throw new CodigoJaExisteException("Código da subestação já existe");
         }
+
+        Subestacao subestacao = paraSubestacaoDto(subestacaoDto);
         Subestacao saved = subestacaoRepository.save(subestacao);
+
         return paraDto(saved);
     }
 }
