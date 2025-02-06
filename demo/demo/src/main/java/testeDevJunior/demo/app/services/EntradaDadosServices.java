@@ -8,6 +8,7 @@ import testeDevJunior.demo.app.dto.EntradaDadosSubReDto;
 import testeDevJunior.demo.app.repositories.SubestacaoRepository;
 import testeDevJunior.demo.domain.RedeMT;
 import testeDevJunior.demo.domain.Subestacao;
+import testeDevJunior.demo.infra.exceptions.CodigoJaExisteException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,10 @@ public class EntradaDadosServices {
     @Transactional
     public void salvarEntradaDados(EntradaDadosSubReDto dto) {
 
+        boolean codigoExiste = subestacaoRepository.existsByCodigo(dto.getCodigo());
+        if (codigoExiste) {
+            throw new CodigoJaExisteException("Código da subestação já existe");
+        }
         Subestacao subestacao = new Subestacao();
         subestacao.setCodigo(dto.getCodigo());
         subestacao.setNome(dto.getNome());

@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/RedesMT")
+@CrossOrigin
 public class RedeMTController {
 
     private RedeMTService redeMTService;
